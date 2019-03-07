@@ -3,7 +3,7 @@ Fujicoin Core integration/staging tree
 
 [![Build Status](https://travis-ci.org/fujicoin/fujicoin.svg?branch=master)](https://travis-ci.org/fujicoin/fujicoin)
 
-https://fujicoincore.org
+https://bitcoincore.org
 
 What is Fujicoin?
 ----------------
@@ -15,8 +15,8 @@ out collectively by the network. Fujicoin Core is the name of open source
 software which enables the use of this currency.
 
 For more information, as well as an immediately useable, binary version of
-the Fujicoin Core software, see https://fujicoincore.org/en/download/, or read the
-[original whitepaper](https://fujicoincore.org/fujicoin.pdf).
+the Fujicoin Core software, see https://bitcoincore.org/en/download/, or read the
+[original whitepaper](https://bitcoincore.org/fujicoin.pdf).
 
 License
 -------
@@ -65,7 +65,7 @@ Translations
 ------------
 
 Changes to translations as well as new translations can be submitted to
-[Fujicoin Core's Transifex page](https://www.transifex.com/projects/p/fujicoin/).
+[Fujicoin Core's Transifex page](https://www.transifex.com/projects/p/bitcoin/).
 
 Translations are periodically pulled from Transifex and merged into the git repository. See the
 [translation process](doc/translation_process.md) for details on how this works.

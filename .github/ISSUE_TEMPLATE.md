@@ -1,8 +1,8 @@
 <!-- This issue tracker is only for technical issues related to Fujicoin Core.
 
-General fujicoin questions and/or support requests are best directed to the Fujicoin StackExchange at https://fujicoin.stackexchange.com.
+General fujicoin questions and/or support requests are best directed to the Fujicoin StackExchange at https://bitcoin.stackexchange.com.
 
-For reporting security issues, please read instructions at https://fujicoincore.org/en/contact/.
+For reporting security issues, please read instructions at https://bitcoincore.org/en/contact/.
 
 If the node is "stuck" during sync or giving "block checksum mismatch" errors, please ensure your hardware is stable by running memtest and observe CPU temperature with a load-test tool such as linpack before creating an issue! -->
 

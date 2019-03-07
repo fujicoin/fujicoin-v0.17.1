@@ -1,17 +1,17 @@
 Fujicoin Core version 0.16.0 is now available from:
 
-  <https://fujicoincore.org/bin/fujicoin-core-0.16.0/>
+  <https://bitcoincore.org/bin/bitcoin-core-0.16.0/>
 
 This is a new major version release, including new features, various bugfixes
 and performance improvements, as well as updated translations.
 
 Please report bugs using the issue tracker at GitHub:
 
-  <https://github.com/fujicoin/fujicoin/issues>
+  <https://github.com/bitcoin/bitcoin/issues>
 
 To receive security and update notifications, please subscribe to:
 
-  <https://fujicoincore.org/en/list/announcements/join/>
+  <https://bitcoincore.org/en/list/announcements/join/>
 
 How to Upgrade
 ==============
@@ -717,4 +717,4 @@ Thanks to everyone who directly contributed to this release:
 - Willy Ko
 - Wladimir J. van der Laan
 
-As well as everyone that helped translating on [Transifex](https://www.transifex.com/projects/p/fujicoin/).
+As well as everyone that helped translating on [Transifex](https://www.transifex.com/projects/p/bitcoin/).

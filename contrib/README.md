@@ -24,10 +24,10 @@ Build Tools and Keys
 ### Packaging ###
 The [Debian](/contrib/debian) subfolder contains the copyright file.
 
-All other packaging related files can be found in the [fujicoin-core/packaging](https://github.com/fujicoin-core/packaging) repository.
+All other packaging related files can be found in the [fujicoin-core/packaging](https://github.com/bitcoin-core/packaging) repository.
 
 ### [Gitian-descriptors](/contrib/gitian-descriptors) ###
-Files used during the gitian build process. For more information about gitian, see the [the Fujicoin Core documentation repository](https://github.com/fujicoin-core/docs).
+Files used during the gitian build process. For more information about gitian, see the [the Fujicoin Core documentation repository](https://github.com/bitcoin-core/docs).
 
 ### [Gitian-keys](/contrib/gitian-keys)
 PGP keys used for signing Fujicoin Core [Gitian release](/doc/release-process.md) results.

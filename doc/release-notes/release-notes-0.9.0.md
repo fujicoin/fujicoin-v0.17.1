@@ -1,13 +1,13 @@
 Fujicoin Core version 0.9.0 is now available from:
 
-  https://fujicoin.org/bin/0.9.0/
+  https://bitcoin.org/bin/0.9.0/
 
 This is a new major version release, bringing both new features and
 bug fixes.
 
 Please report bugs using the issue tracker at github:
 
-  https://github.com/fujicoin/fujicoin/issues
+  https://github.com/bitcoin/bitcoin/issues
 
 How to Upgrade
 --------------

@@ -1,17 +1,17 @@
 Fujicoin Core version 0.17.0 is now available from:
 
-  <https://fujicoincore.org/bin/fujicoin-core-0.17.0/>
+  <https://bitcoincore.org/bin/bitcoin-core-0.17.0/>
 
 This is a new major version release, including new features, various bugfixes
 and performance improvements, as well as updated translations.
 
 Please report bugs using the issue tracker at GitHub:
 
-  <https://github.com/fujicoin/fujicoin/issues>
+  <https://github.com/bitcoin/bitcoin/issues>
 
 To receive security and update notifications, please subscribe to:
 
-  <https://fujicoincore.org/en/list/announcements/join/>
+  <https://bitcoincore.org/en/list/announcements/join/>
 
 How to Upgrade
 ==============
@@ -187,11 +187,11 @@ Here are the changes to RPC methods:
 BIP 174 Partially Signed Fujicoin Transactions support
 -----------------------------------------------------
 
-[BIP 174 PSBT](https://github.com/fujicoin/bips/blob/master/bip-0174.mediawiki) is an interchange format for Fujicoin transactions that are not fully signed
+[BIP 174 PSBT](https://github.com/bitcoin/bips/blob/master/bip-0174.mediawiki) is an interchange format for Fujicoin transactions that are not fully signed
 yet, together with relevant metadata to help entities work towards signing it.
 It is intended to simplify workflows where multiple parties need to cooperate to
 produce a transaction. Examples include hardware wallets, multisig setups, and
-[CoinJoin](https://fujicointalk.org/?topic=279249) transactions.
+[CoinJoin](https://bitcointalk.org/?topic=279249) transactions.
 
 ### Overall workflow
 
@@ -935,7 +935,7 @@ Support for Python 2 has been discontinued for all test files and tools.
 - #13625 `7146672` Add release notes for -printtoconsole and -debuglogfile changes (satwo)
 - #13718 `f7f574d` Specify preferred Python string formatting technique (masonicboom)
 - #12764 `10b9a81` Remove field in getblocktemplate help that has never been used (conscott)
-- #13742 `d2186b3` Adjust fujicoincore.org links (MarcoFalke)
+- #13742 `d2186b3` Adjust bitcoincore.org links (MarcoFalke)
 - #13706 `94dd89e` Minor improvements to release-process.md (MitchellCash)
 - #13775 `ef4fac0` Remove newlines from error message (practicalswift)
 - #13803 `feb7dd9` add note to contributor docs about warranted PR's (kallewoof)
@@ -1102,4 +1102,4 @@ And to those that reported security issues:
 
 - awemany (for CVE-2018-17144, previously credited as "anonymous reporter")
 
-As well as everyone that helped translating on [Transifex](https://www.transifex.com/projects/p/fujicoin/).
+As well as everyone that helped translating on [Transifex](https://www.transifex.com/projects/p/bitcoin/).

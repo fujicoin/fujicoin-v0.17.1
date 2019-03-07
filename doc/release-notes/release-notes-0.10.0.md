@@ -1,13 +1,13 @@
 Fujicoin Core version 0.10.0 is now available from:
 
-  https://fujicoin.org/bin/0.10.0/
+  https://bitcoin.org/bin/0.10.0/
 
 This is a new major version release, bringing both new features and
 bug fixes.
 
 Please report bugs using the issue tracker at github:
 
-  https://github.com/fujicoin/fujicoin/issues
+  https://github.com/bitcoin/bitcoin/issues
 
 Upgrading and downgrading
 =========================
@@ -226,11 +226,11 @@ Starting from 0.10.0, the Fujicoin Core distribution includes a consensus librar
 
 The purpose of this library is to make the verification functionality that is
 critical to Fujicoin's consensus available to other applications, e.g. to language
-bindings such as [python-fujicoinlib](https://pypi.python.org/pypi/python-fujicoinlib) or
+bindings such as [python-fujicoinlib](https://pypi.python.org/pypi/python-bitcoinlib) or
 alternative node implementations.
 
 This library is called `libfujicoinconsensus.so` (or, `.dll` for Windows).
-Its interface is defined in the C header [fujicoinconsensus.h](https://github.com/fujicoin/fujicoin/blob/0.10/src/script/fujicoinconsensus.h).
+Its interface is defined in the C header [fujicoinconsensus.h](https://github.com/bitcoin/bitcoin/blob/0.10/src/script/bitcoinconsensus.h).
 
 In its initial version the API includes two functions:
 
@@ -758,5 +758,5 @@ Thanks to everyone who contributed to this release:
 - Yoichi Hirai
 - Zak Wilcox
 
-As well as everyone that helped translating on [Transifex](https://www.transifex.com/projects/p/fujicoin/).
+As well as everyone that helped translating on [Transifex](https://www.transifex.com/projects/p/bitcoin/).
 

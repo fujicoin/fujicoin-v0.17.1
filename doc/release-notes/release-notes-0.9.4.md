@@ -1,13 +1,13 @@
 Fujicoin Core version 0.9.4 is now available from:
 
-  https://fujicoin.org/bin/0.9.4/
+  https://bitcoin.org/bin/0.9.4/
 
 This is a new minor version release, bringing only bug fixes and updated
 translations. Upgrading to this release is recommended.
 
 Please report bugs using the issue tracker at github:
 
-  https://github.com/fujicoin/fujicoin/issues
+  https://github.com/bitcoin/bitcoin/issues
 
 How to Upgrade
 ===============
@@ -30,7 +30,7 @@ as are any built with the gitian deterministic build system.
 
 However, if you are running either
 
-- The Ubuntu PPA from https://launchpad.net/~fujicoin/+archive/ubuntu/fujicoin
+- The Ubuntu PPA from https://launchpad.net/~bitcoin/+archive/ubuntu/bitcoin
 - A third-party or self-compiled Fujicoin Core
 
 upgrade to Fujicoin Core 0.9.4, which includes a workaround, **before** updating
@@ -92,4 +92,4 @@ Thanks to who contributed to this release, at least:
 - Sergio Demian Lerner
 - Wladimir J. van der Laan
 
-As well as everyone that helped translating on [Transifex](https://www.transifex.com/projects/p/fujicoin/).
+As well as everyone that helped translating on [Transifex](https://www.transifex.com/projects/p/bitcoin/).

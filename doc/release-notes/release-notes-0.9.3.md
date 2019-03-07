@@ -1,13 +1,13 @@
 Fujicoin Core version 0.9.3 is now available from:
 
-  https://fujicoin.org/bin/0.9.3/
+  https://bitcoin.org/bin/0.9.3/
 
 This is a new minor version release, bringing only bug fixes and updated
 translations. Upgrading to this release is recommended.
 
 Please report bugs using the issue tracker at github:
 
-  https://github.com/fujicoin/fujicoin/issues
+  https://github.com/bitcoin/bitcoin/issues
 
 Upgrading and downgrading
 ==========================
@@ -98,4 +98,4 @@ Thanks to everyone who contributed to this release:
 - Wladimir J. van der Laan
 - Zak Wilcox
 
-As well as everyone that helped translating on [Transifex](https://www.transifex.com/projects/p/fujicoin/).
+As well as everyone that helped translating on [Transifex](https://www.transifex.com/projects/p/bitcoin/).

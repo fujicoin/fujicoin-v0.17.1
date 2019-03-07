@@ -23,9 +23,9 @@ def setup():
         programs += ['lxc', 'debootstrap']
     subprocess.check_call(['sudo', 'apt-get', 'install', '-qq'] + programs)
     if not os.path.isdir('gitian.sigs'):
-        subprocess.check_call(['git', 'clone', 'https://github.com/fujicoin-core/gitian.sigs.git'])
+        subprocess.check_call(['git', 'clone', 'https://github.com/bitcoin-core/gitian.sigs.git'])
     if not os.path.isdir('fujicoin-detached-sigs'):
-        subprocess.check_call(['git', 'clone', 'https://github.com/fujicoin-core/fujicoin-detached-sigs.git'])
+        subprocess.check_call(['git', 'clone', 'https://github.com/bitcoin-core/bitcoin-detached-sigs.git'])
     if not os.path.isdir('gitian-builder'):
         subprocess.check_call(['git', 'clone', 'https://github.com/devrandom/gitian-builder.git'])
     if not os.path.isdir('fujicoin'):
@@ -52,7 +52,7 @@ def build():
     os.makedirs('inputs', exist_ok=True)
 
     subprocess.check_call(['wget', '-N', '-P', 'inputs', 'http://downloads.sourceforge.net/project/osslsigncode/osslsigncode/osslsigncode-1.7.1.tar.gz'])
-    subprocess.check_call(['wget', '-N', '-P', 'inputs', 'https://fujicoincore.org/cfields/osslsigncode-Backports-to-1.7.1.patch'])
+    subprocess.check_call(['wget', '-N', '-P', 'inputs', 'https://bitcoincore.org/cfields/osslsigncode-Backports-to-1.7.1.patch'])
     subprocess.check_call(['make', '-C', '../fujicoin/depends', 'download', 'SOURCES_PATH=' + os.getcwd() + '/cache/common'])
 
     if args.linux:

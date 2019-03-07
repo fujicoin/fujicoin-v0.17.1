@@ -4,7 +4,7 @@ Fujicoin version 0.7.2 is now available from:
 This is a bug-fix minor release.
 
 Please report bugs using the issue tracker at github:
-  https://github.com/fujicoin/fujicoin/issues
+  https://github.com/bitcoin/bitcoin/issues
 
 How to Upgrade
 --------------

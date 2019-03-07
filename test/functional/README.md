@@ -91,7 +91,7 @@ Examples tests are `p2p_unrequested_blocks.py`, `p2p_compactblocks.py`.
 ### test-framework modules
 
 #### [test_framework/authproxy.py](test_framework/authproxy.py)
-Taken from the [python-fujicoinrpc repository](https://github.com/jgarzik/python-fujicoinrpc).
+Taken from the [python-fujicoinrpc repository](https://github.com/jgarzik/python-bitcoinrpc).
 
 #### [test_framework/test_framework.py](test_framework/test_framework.py)
 Base class for functional tests.

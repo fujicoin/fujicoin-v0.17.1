@@ -4,7 +4,7 @@ Fujicoin version 0.6.3 is now available for download at:
 This is a bug-fix release, with no new features.
 
 Please report bugs using the issue tracker at github:
-  https://github.com/fujicoin/fujicoin/issues
+  https://github.com/bitcoin/bitcoin/issues
 
 CHANGE SUMMARY
 

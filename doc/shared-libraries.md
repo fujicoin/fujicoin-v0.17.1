@@ -28,12 +28,12 @@ The interface is defined in the C header `fujicoinconsensus.h` located in  `src/
 
 ##### Script Flags
 - `fujicoinconsensus_SCRIPT_FLAGS_VERIFY_NONE`
-- `fujicoinconsensus_SCRIPT_FLAGS_VERIFY_P2SH` - Evaluate P2SH ([BIP16](https://github.com/fujicoin/bips/blob/master/bip-0016.mediawiki)) subscripts
-- `fujicoinconsensus_SCRIPT_FLAGS_VERIFY_DERSIG` - Enforce strict DER ([BIP66](https://github.com/fujicoin/bips/blob/master/bip-0066.mediawiki)) compliance
-- `fujicoinconsensus_SCRIPT_FLAGS_VERIFY_NULLDUMMY` - Enforce NULLDUMMY ([BIP147](https://github.com/fujicoin/bips/blob/master/bip-0147.mediawiki))
-- `fujicoinconsensus_SCRIPT_FLAGS_VERIFY_CHECKLOCKTIMEVERIFY` - Enable CHECKLOCKTIMEVERIFY ([BIP65](https://github.com/fujicoin/bips/blob/master/bip-0065.mediawiki))
-- `fujicoinconsensus_SCRIPT_FLAGS_VERIFY_CHECKSEQUENCEVERIFY` - Enable CHECKSEQUENCEVERIFY ([BIP112](https://github.com/fujicoin/bips/blob/master/bip-0112.mediawiki))
-- `fujicoinconsensus_SCRIPT_FLAGS_VERIFY_WITNESS` - Enable WITNESS ([BIP141](https://github.com/fujicoin/bips/blob/master/bip-0141.mediawiki))
+- `fujicoinconsensus_SCRIPT_FLAGS_VERIFY_P2SH` - Evaluate P2SH ([BIP16](https://github.com/bitcoin/bips/blob/master/bip-0016.mediawiki)) subscripts
+- `fujicoinconsensus_SCRIPT_FLAGS_VERIFY_DERSIG` - Enforce strict DER ([BIP66](https://github.com/bitcoin/bips/blob/master/bip-0066.mediawiki)) compliance
+- `fujicoinconsensus_SCRIPT_FLAGS_VERIFY_NULLDUMMY` - Enforce NULLDUMMY ([BIP147](https://github.com/bitcoin/bips/blob/master/bip-0147.mediawiki))
+- `fujicoinconsensus_SCRIPT_FLAGS_VERIFY_CHECKLOCKTIMEVERIFY` - Enable CHECKLOCKTIMEVERIFY ([BIP65](https://github.com/bitcoin/bips/blob/master/bip-0065.mediawiki))
+- `fujicoinconsensus_SCRIPT_FLAGS_VERIFY_CHECKSEQUENCEVERIFY` - Enable CHECKSEQUENCEVERIFY ([BIP112](https://github.com/bitcoin/bips/blob/master/bip-0112.mediawiki))
+- `fujicoinconsensus_SCRIPT_FLAGS_VERIFY_WITNESS` - Enable WITNESS ([BIP141](https://github.com/bitcoin/bips/blob/master/bip-0141.mediawiki))
 
 ##### Errors
 - `fujicoinconsensus_ERR_OK` - No errors with input parameters *(see the return value of `fujicoinconsensus_verify_script` for the verification status)*
@@ -44,6 +44,6 @@ The interface is defined in the C header `fujicoinconsensus.h` located in  `src/
 
 ### Example Implementations
 - [NFujicoin](https://github.com/NicolasDorier/NFujicoin/blob/master/NFujicoin/Script.cs#L814) (.NET Bindings)
-- [node-libfujicoinconsensus](https://github.com/bitpay/node-libfujicoinconsensus) (Node.js Bindings)
-- [java-libfujicoinconsensus](https://github.com/dexX7/java-libfujicoinconsensus) (Java Bindings)
-- [fujicoinconsensus-php](https://github.com/Bit-Wasp/fujicoinconsensus-php) (PHP Bindings)
+- [node-libfujicoinconsensus](https://github.com/bitpay/node-libbitcoinconsensus) (Node.js Bindings)
+- [java-libfujicoinconsensus](https://github.com/dexX7/java-libbitcoinconsensus) (Java Bindings)
+- [fujicoinconsensus-php](https://github.com/Bit-Wasp/bitcoinconsensus-php) (PHP Bindings)
