@@ -15,6 +15,13 @@ uint256 CBlockHeader::GetHash() const
     return SerializeHash(*this);
 }
 
+uint256 CBlockHeader::GetPoWHash() const
+{
+   uint256 thash;
+   scrypt_N_1_1_256(BEGIN(nVersion), BEGIN(thash), 10); //Fujicoin scrypt-N11 2^11 = 2048
+   return thash;
+}
+
 std::string CBlock::ToString() const
 {
     std::stringstream s;

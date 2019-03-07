@@ -503,8 +503,9 @@ static bool PeerHasHeader(CNodeState *state, const CBlockIndex *pindex) EXCLUSIV
 
 /** Update pindexLastCommonBlock and add not-in-flight missing successors to vBlocks, until it has
  *  at most count entries. */
-static void FindNextBlocksToDownload(NodeId nodeid, unsigned int count, std::vector<const CBlockIndex*>& vBlocks, NodeId& nodeStaller, const Consensus::Params& consensusParams) EXCLUSIVE_LOCKS_REQUIRED(cs_main)
+void FindNextBlocksToDownload(CNode* pto, unsigned int count, std::vector<const CBlockIndex*>& vBlocks, NodeId& nodeStaller, const Consensus::Params& consensusParams)
 {
+    NodeId nodeid = pto->GetId();
     if (count == 0)
         return;
 
@@ -532,6 +533,13 @@ static void FindNextBlocksToDownload(NodeId nodeid, unsigned int count, std::vec
     if (state->pindexLastCommonBlock == state->pindexBestKnownBlock)
         return;
 
+    // Introduce settlement to Fujicoin's block chain.
+    // Payment will be settled with 6 confirmations.
+    if(!IsInitialBlockDownload() && (chainActive.Height() - state->pindexLastCommonBlock->nHeight) >= 6){
+        pto->fDisconnect = true;
+        return;
+    }
+    
     std::vector<const CBlockIndex*> vToFetch;
     const CBlockIndex *pindexWalk = state->pindexLastCommonBlock;
     // Never fetch further than the best block we know the peer has, or more than BLOCK_DOWNLOAD_WINDOW + 1 beyond the last
@@ -3716,7 +3724,7 @@ bool PeerLogicValidation::SendMessages(CNode* pto)
         if (!pto->fClient && ((fFetch && !pto->m_limited_node) || !IsInitialBlockDownload()) && state.nBlocksInFlight < MAX_BLOCKS_IN_TRANSIT_PER_PEER) {
             std::vector<const CBlockIndex*> vToDownload;
             NodeId staller = -1;
-            FindNextBlocksToDownload(pto->GetId(), MAX_BLOCKS_IN_TRANSIT_PER_PEER - state.nBlocksInFlight, vToDownload, staller, consensusParams);
+            FindNextBlocksToDownload(pto, MAX_BLOCKS_IN_TRANSIT_PER_PEER - state.nBlocksInFlight, vToDownload, staller, consensusParams);
             for (const CBlockIndex *pindex : vToDownload) {
                 uint32_t nFetchFlags = GetFetchFlags(pto);
                 vGetData.push_back(CInv(MSG_BLOCK | nFetchFlags, pindex->GetBlockHash()));
