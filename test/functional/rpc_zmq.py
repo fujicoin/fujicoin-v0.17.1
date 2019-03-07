@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
-# Copyright (c) 2018 The Bitcoin Core developers
+# Copyright (c) 2018 The Fujicoin Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 """Test for the ZMQ RPC methods."""
 
-from test_framework.test_framework import BitcoinTestFramework
+from test_framework.test_framework import FujicoinTestFramework
 from test_framework.util import assert_equal
 
 
-class RPCZMQTest(BitcoinTestFramework):
+class RPCZMQTest(FujicoinTestFramework):
 
     address = "tcp://127.0.0.1:28332"
 
@@ -18,7 +18,7 @@ class RPCZMQTest(BitcoinTestFramework):
 
     def skip_test_if_missing_module(self):
         self.skip_if_no_py3_zmq()
-        self.skip_if_no_bitcoind_zmq()
+        self.skip_if_no_fujicoind_zmq()
 
     def run_test(self):
         self._test_getzmqnotifications()

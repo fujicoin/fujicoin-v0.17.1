@@ -1,9 +1,9 @@
-// Copyright (c) 2011-2018 The Bitcoin Core developers
+// Copyright (c) 2011-2018 The Fujicoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_QT_RPCCONSOLE_H
-#define BITCOIN_QT_RPCCONSOLE_H
+#ifndef FUJICOIN_QT_RPCCONSOLE_H
+#define FUJICOIN_QT_RPCCONSOLE_H
 
 #include <qt/guiutil.h>
 #include <qt/peertablemodel.h>
@@ -32,7 +32,7 @@ class QMenu;
 class QItemSelection;
 QT_END_NAMESPACE
 
-/** Local Bitcoin RPC console. */
+/** Local Fujicoin RPC console. */
 class RPCConsole: public QWidget
 {
     Q_OBJECT
@@ -165,4 +165,4 @@ private:
     void updateNetworkState();
 };
 
-#endif // BITCOIN_QT_RPCCONSOLE_H
+#endif // FUJICOIN_QT_RPCCONSOLE_H

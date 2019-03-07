@@ -1,22 +1,22 @@
-// Copyright (c) 2011-2018 The Bitcoin Core developers
+// Copyright (c) 2011-2018 The Fujicoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include <qt/bitcoinunits.h>
+#include <qt/fujicoinunits.h>
 
 #include <primitives/transaction.h>
 
 #include <QStringList>
 
-BitcoinUnits::BitcoinUnits(QObject *parent):
+FujicoinUnits::FujicoinUnits(QObject *parent):
         QAbstractListModel(parent),
         unitlist(availableUnits())
 {
 }
 
-QList<BitcoinUnits::Unit> BitcoinUnits::availableUnits()
+QList<FujicoinUnits::Unit> FujicoinUnits::availableUnits()
 {
-    QList<BitcoinUnits::Unit> unitlist;
+    QList<FujicoinUnits::Unit> unitlist;
     unitlist.append(BTC);
     unitlist.append(mBTC);
     unitlist.append(uBTC);
@@ -24,7 +24,7 @@ QList<BitcoinUnits::Unit> BitcoinUnits::availableUnits()
     return unitlist;
 }
 
-bool BitcoinUnits::valid(int unit)
+bool FujicoinUnits::valid(int unit)
 {
     switch(unit)
     {
@@ -38,7 +38,7 @@ bool BitcoinUnits::valid(int unit)
     }
 }
 
-QString BitcoinUnits::longName(int unit)
+QString FujicoinUnits::longName(int unit)
 {
     switch(unit)
     {
@@ -50,7 +50,7 @@ QString BitcoinUnits::longName(int unit)
     }
 }
 
-QString BitcoinUnits::shortName(int unit)
+QString FujicoinUnits::shortName(int unit)
 {
     switch(unit)
     {
@@ -60,19 +60,19 @@ QString BitcoinUnits::shortName(int unit)
     }
 }
 
-QString BitcoinUnits::description(int unit)
+QString FujicoinUnits::description(int unit)
 {
     switch(unit)
     {
-    case BTC: return QString("Bitcoins");
-    case mBTC: return QString("Milli-Bitcoins (1 / 1" THIN_SP_UTF8 "000)");
-    case uBTC: return QString("Micro-Bitcoins (bits) (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+    case BTC: return QString("Fujicoins");
+    case mBTC: return QString("Milli-Fujicoins (1 / 1" THIN_SP_UTF8 "000)");
+    case uBTC: return QString("Micro-Fujicoins (bits) (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
     case SAT: return QString("Satoshi (sat) (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
     default: return QString("???");
     }
 }
 
-qint64 BitcoinUnits::factor(int unit)
+qint64 FujicoinUnits::factor(int unit)
 {
     switch(unit)
     {
@@ -84,7 +84,7 @@ qint64 BitcoinUnits::factor(int unit)
     }
 }
 
-int BitcoinUnits::decimals(int unit)
+int FujicoinUnits::decimals(int unit)
 {
     switch(unit)
     {
@@ -96,7 +96,7 @@ int BitcoinUnits::decimals(int unit)
     }
 }
 
-QString BitcoinUnits::format(int unit, const CAmount& nIn, bool fPlus, SeparatorStyle separators)
+QString FujicoinUnits::format(int unit, const CAmount& nIn, bool fPlus, SeparatorStyle separators)
 {
     // Note: not using straight sprintf here because we do NOT want
     // localized number formatting.
@@ -140,12 +140,12 @@ QString BitcoinUnits::format(int unit, const CAmount& nIn, bool fPlus, Separator
 // Please take care to use formatHtmlWithUnit instead, when
 // appropriate.
 
-QString BitcoinUnits::formatWithUnit(int unit, const CAmount& amount, bool plussign, SeparatorStyle separators)
+QString FujicoinUnits::formatWithUnit(int unit, const CAmount& amount, bool plussign, SeparatorStyle separators)
 {
     return format(unit, amount, plussign, separators) + QString(" ") + shortName(unit);
 }
 
-QString BitcoinUnits::formatHtmlWithUnit(int unit, const CAmount& amount, bool plussign, SeparatorStyle separators)
+QString FujicoinUnits::formatHtmlWithUnit(int unit, const CAmount& amount, bool plussign, SeparatorStyle separators)
 {
     QString str(formatWithUnit(unit, amount, plussign, separators));
     str.replace(QChar(THIN_SP_CP), QString(THIN_SP_HTML));
@@ -153,7 +153,7 @@ QString BitcoinUnits::formatHtmlWithUnit(int unit, const CAmount& amount, bool p
 }
 
 
-bool BitcoinUnits::parse(int unit, const QString &value, CAmount *val_out)
+bool FujicoinUnits::parse(int unit, const QString &value, CAmount *val_out)
 {
     if(!valid(unit) || value.isEmpty())
         return false; // Refuse to parse invalid unit or empty string
@@ -192,23 +192,23 @@ bool BitcoinUnits::parse(int unit, const QString &value, CAmount *val_out)
     return ok;
 }
 
-QString BitcoinUnits::getAmountColumnTitle(int unit)
+QString FujicoinUnits::getAmountColumnTitle(int unit)
 {
     QString amountTitle = QObject::tr("Amount");
-    if (BitcoinUnits::valid(unit))
+    if (FujicoinUnits::valid(unit))
     {
-        amountTitle += " ("+BitcoinUnits::shortName(unit) + ")";
+        amountTitle += " ("+FujicoinUnits::shortName(unit) + ")";
     }
     return amountTitle;
 }
 
-int BitcoinUnits::rowCount(const QModelIndex &parent) const
+int FujicoinUnits::rowCount(const QModelIndex &parent) const
 {
     Q_UNUSED(parent);
     return unitlist.size();
 }
 
-QVariant BitcoinUnits::data(const QModelIndex &index, int role) const
+QVariant FujicoinUnits::data(const QModelIndex &index, int role) const
 {
     int row = index.row();
     if(row >= 0 && row < unitlist.size())
@@ -228,7 +228,7 @@ QVariant BitcoinUnits::data(const QModelIndex &index, int role) const
     return QVariant();
 }
 
-CAmount BitcoinUnits::maxMoney()
+CAmount FujicoinUnits::maxMoney()
 {
     return MAX_MONEY;
 }
