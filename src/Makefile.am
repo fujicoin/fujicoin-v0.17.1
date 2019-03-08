@@ -311,7 +311,6 @@ crypto_libfujicoin_crypto_base_a_SOURCES = \
   crypto/sha256.h \
   crypto/sha512.cpp \
   crypto/sha512.h \
-  crypto/scrypt-sse2.cpp \
   crypto/scrypt.cpp \
   crypto/scrypt.h
 
