@@ -14,6 +14,43 @@ for example, when specifying the path of the dependency:
 Here BDB_PREFIX must be an absolute path - it is defined using $(pwd) which ensures
 the usage of the absolute path.
 
+How to make a static linked executable
+--------------------------------------
+Preliminary preparations are unnecessary because related libraries are acquired automatically.
+For example on ubuntu 18.04. Do not compile tests and bench.
+Prepare the compilation environment:
+```
+Install Ubuntu 18.04
+apt-get update
+apt-get install git wget
+apt-get install build-essential libtool autotools-dev automake pkg-config libssl-dev libevent-dev bsdmainutils libboost-all-dev libminiupnpc-dev libzmq3-dev
+```
+Let's go:
+```
+git clone https://github.com/fujicoin/fujicoin.git fujicoin
+cd fujicoin
+
+git tag
+git checkout fujicoin-v0.17.1 # Select right version
+git status
+
+mkdir dist
+cd depends
+make
+
+cd ..
+./autogen.sh
+
+CONFIG_SITE=$PWD/depends/x86_64-pc-linux-gnu/share/config.site ./configure --prefix=$PWD/dist --without-gui --disable-tests --disable-bench --disable-shared --disable-dependency-tracking
+
+make install
+cd dist/bin
+strip fujicoin-cli fujicoind fujicoin-tx
+```
+The executable files are in dist/bin .
+Note: x86_64-pc-linux-gnu may be different on another system.
+
+
 To Build
 ---------------------
 

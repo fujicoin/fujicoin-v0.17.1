@@ -86,16 +86,23 @@ This means you cannot use a directory that located directly on the host Windows 
 Acquire the source in the usual way:
 
     git clone https://github.com/fujicoin/fujicoin.git
+    chmod -R a+x fujicoin
 
 Once the source code is ready the build steps are below.
 
-    PATH=$(echo "$PATH" | sed -e 's/:\/mnt.*//g') # strip out problematic Windows %PATH% imported var
+Do not compile tests and bench.
+
+    PATH=$(echo "$PATH" | sed -e 's/:\/mnt.*//g') # strip out problematic Windows %PATH% imported var, not required for Ubuntu
     cd depends
     make HOST=x86_64-w64-mingw32
     cd ..
-    ./autogen.sh # not required when building from tarball
-    CONFIG_SITE=$PWD/depends/x86_64-w64-mingw32/share/config.site ./configure --prefix=/
-    make
+    mkdir dist
+    ./autogen.sh
+    CONFIG_SITE=$PWD/depends/x86_64-w64-mingw32/share/config.site ./configure --prefix=$PWD/dist --disable-tests --disable-bench --disable-dependency-tracking
+    make install
+    cd dist/bin
+    strip fujicoin-cli.exe fujicoind.exe fujicoin-qt.exe fujicoin-tx.exe
+
 
 ## Building for 32-bit Windows
 
@@ -114,16 +121,25 @@ This means you cannot use a directory that located directly on the host Windows 
 Acquire the source in the usual way:
 
     git clone https://github.com/fujicoin/fujicoin.git
+    chmod -R a+x fujicoin
 
 Then build using:
 
-    PATH=$(echo "$PATH" | sed -e 's/:\/mnt.*//g') # strip out problematic Windows %PATH% imported var
+Do not compile tests and bench.
+
+    PATH=$(echo "$PATH" | sed -e 's/:\/mnt.*//g') # strip out problematic Windows %PATH% imported var, not required for Ubuntu
     cd depends
     make HOST=i686-w64-mingw32
     cd ..
-    ./autogen.sh # not required when building from tarball
-    CONFIG_SITE=$PWD/depends/i686-w64-mingw32/share/config.site ./configure --prefix=/
+    mkdir dist
+    ./autogen.sh
+    CONFIG_SITE=$PWD/depends/i686-w64-mingw32/share/config.site ./configure --prefix=$PWD/dist --disable-tests --disable-bench --disable-dependency-tracking
+    strip src/fujicoin-cli.exe src/fujicoin-tx.exe src/fujicoind.exe src/qt/fujicoin-qt.exe
     make
+    strip src/fujicoin-cli.exe src/fujicoin-tx.exe src/fujicoind.exe src/qt/fujicoin-qt.exe
+    make install
+    cd dist/bin
+
 
 ## Depends system
 
