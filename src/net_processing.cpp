@@ -534,8 +534,8 @@ void FindNextBlocksToDownload(CNode* pto, unsigned int count, std::vector<const 
         return;
 
     // Introduce settlement to Fujicoin's block chain.
-    // Payment will be settled with 6 confirmations.
-    if(!IsInitialBlockDownload() && (state->pindexBestKnownBlock->nHeight - chainActive.Height()) <= 100 && (chainActive.Height() - state->pindexLastCommonBlock->nHeight) >= 6){
+    // cd diith 6 confirmations.
+    if((state->pindexBestKnownBlock->nHeight - chainActive.Height()) <= 100 && (chainActive.Height() - state->pindexLastCommonBlock->nHeight) >= 6){
         pto->fDisconnect = true;
         return;
     }
