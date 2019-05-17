@@ -44,13 +44,13 @@ static const unsigned int DEFAULT_KEYPOOL_SIZE = 1000;
 //! -paytxfee default
 constexpr CAmount DEFAULT_PAY_TX_FEE = 0;
 //! -fallbackfee default
-static const CAmount DEFAULT_FALLBACK_FEE = 2000000;
+static const CAmount DEFAULT_FALLBACK_FEE = 20000000;
 //! -discardfee default
-static const CAmount DEFAULT_DISCARD_FEE = 1000000;
+static const CAmount DEFAULT_DISCARD_FEE = 10000000;
 //! -mintxfee default
-static const CAmount DEFAULT_TRANSACTION_MINFEE = 100000;
+static const CAmount DEFAULT_TRANSACTION_MINFEE = 10000000;
 //! minimum recommended increment for BIP 125 replacement txs
-static const CAmount WALLET_INCREMENTAL_RELAY_FEE = 100000;
+static const CAmount WALLET_INCREMENTAL_RELAY_FEE = 50000000;
 //! Default for -spendzeroconfchange
 static const bool DEFAULT_SPEND_ZEROCONF_CHANGE = true;
 //! Default for -walletrejectlongchains
